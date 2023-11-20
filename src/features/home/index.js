@@ -3,6 +3,7 @@ import { useQueryProdutcts } from "./service";
 import { useState } from "react";
 import { ActionIcon, Group, Text } from "@mantine/core";
 import { IconEye } from "@tabler/icons-react";
+import { DetailModal } from "./components/detailModal";
  
 const HomeFeature = () => {
   const [page, setPage] = useState(1);
@@ -70,7 +71,7 @@ const HomeFeature = () => {
       </section>
       <DetailModal
         isOpen={isOpenModal}
-        onClose={(() => setIsOpenModal(false))}
+        onClose={() => {setIsOpenModal(false)}}
         data={selectedData}
       />
     </main>
